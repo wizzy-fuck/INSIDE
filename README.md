@@ -1,6 +1,6 @@
 <div align="center">
 
-![Screenshot_1]([https://telegra.ph/file/c87fdb1c5faad4ee53050.png](https://telegra.ph/file/645c4f89e0624a2a1db83.png)
+<img>https://telegra.ph/file/645c4f89e0624a2a1db83.png</img>
 
 # 💣 Evolution Killers BOMBER
 
