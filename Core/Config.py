@@ -39,4 +39,3 @@ def change_config(key, value):
     with open(CONFIG_NAME, 'w') as f:
         dump(config, f)
 
-
