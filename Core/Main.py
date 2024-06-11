@@ -61,7 +61,7 @@ def main(page: Page):
         _color = [MY_COLOR, 'red', 'pink', 'WHITE', 'black', 'purple', 'indigo', 'blue', 'cyan', 'teal', 'green', 'lime', 'yellow', 'amber', 'orange', 'brown', 'bluegrey', 'grey']
         global color
         color = choice(_color)
-        banner.controls = [Text(spans=[TextSpan('INSIDE', TextStyle(size=95, foreground=Paint(color=color, stroke_width=9, stroke_join='round', style='stroke')))], font_family='Consolas'), Text(spans=[TextSpan('INSIDE', TextStyle(size=95, color=color))], font_family='Consolas')]
+        banner.controls = [Text(spans=[TextSpan('evolution killers', TextStyle(size=95, foreground=Paint(color=color, stroke_width=9, stroke_join='round', style='stroke')))], font_family='Consolas'), Text(spans=[TextSpan('evolution killers', TextStyle(size=95, color=color))], font_family='Consolas')]
         
         number.border_color=color
         number.cursor_color=color
@@ -189,7 +189,7 @@ def main(page: Page):
             information_window.open = False
             page.update()
 
-        information_window = AlertDialog(content=Text(f'''Сервисов - {len(urls("12345"))}\nRU - {sum(1 for i in urls("12345") if i["info"]["country"] == "RU")}   |   UZ - {sum(1 for i in urls("12345") if i["info"]["country"] == "UZ")}   |   ALL - {sum(1 for i in urls("12345") if i["info"]["country"] == "ALL")}\n\nФидбек Сервисов - {len(feedback_urls("12345"))}\nRU - {sum(1 for i in feedback_urls("12345") if i["info"]["country"] == "RU")}   |   UZ - {sum(1 for i in feedback_urls("12345") if i["info"]["country"] == "UZ")}   |   ALL - {sum(1 for i in feedback_urls("12345") if i["info"]["country"] == "ALL")}\n\nВсего - {len(urls("12345")) + len(feedback_urls("12345"))}''', text_align='center', size=17, font_family='Consolas'), title=Text(f'''INSIDE V{VERSION}''', text_align='center', size=40, color=color, font_family='Consolas'), open=True, actions=[TextButton('ОКЕЙ', width=110, height=50, on_click=button, style=ButtonStyle(color=color))], actions_alignment='end')
+        information_window = AlertDialog(content=Text(f'''Сервисов - {len(urls("12345"))}\nRU - {sum(1 for i in urls("12345") if i["info"]["country"] == "RU")}   |   UZ - {sum(1 for i in urls("12345") if i["info"]["country"] == "UZ")}   |   ALL - {sum(1 for i in urls("12345") if i["info"]["country"] == "ALL")}\n\nФидбек Сервисов - {len(feedback_urls("12345"))}\nRU - {sum(1 for i in feedback_urls("12345") if i["info"]["country"] == "RU")}   |   UZ - {sum(1 for i in feedback_urls("12345") if i["info"]["country"] == "UZ")}   |   ALL - {sum(1 for i in feedback_urls("12345") if i["info"]["country"] == "ALL")}\n\nВсего - {len(urls("12345")) + len(feedback_urls("12345"))}''', text_align='center', size=17, font_family='Consolas'), title=Text(f'''Evolution Killers V {VERSION}''', text_align='center', size=40, color=color, font_family='Consolas'), open=True, actions=[TextButton('ОКЕЙ', width=110, height=50, on_click=button, style=ButtonStyle(color=color))], actions_alignment='end')
 
         page.dialog = information_window
         page.update()
@@ -197,7 +197,7 @@ def main(page: Page):
 
 
     # Баннер
-    banner = Stack([Text(spans=[TextSpan('INSIDE', TextStyle(size=95, foreground=Paint(color=color, stroke_width=9, stroke_join='round', style='stroke')))], font_family='Consolas'), Text(spans=[TextSpan('INSIDE', TextStyle(size=95, color=color))], font_family='Consolas')])
+    banner = Stack([Text(spans=[TextSpan('evolution killers', TextStyle(size=95, foreground=Paint(color=color, stroke_width=9, stroke_join='round', style='stroke')))], font_family='Consolas'), Text(spans=[TextSpan('evolution killers', TextStyle(size=95, color=color))], font_family='Consolas')])
 
     # Ввод номера
     number = TextField(label='Введите номер без знака "+"', width=275, text_align='center', border_radius=40, border_color=color, cursor_color=color, focused_border_color=color, autofocus=True, selection_color=color, label_style=TextStyle(color=color))
@@ -228,9 +228,7 @@ def main(page: Page):
                 feedback,
                 attack_button,
                 Text('\n', size=12),
-                Row([IconButton(icon='telegram', icon_size=48, tooltip='Канал', url='https://t.me/+z4L61XedSVllODAy', icon_color=color),
-                    IconButton(icon='telegram', icon_size=48, tooltip='Владелец', url='https://t.me/A_KTO_Tbl', icon_color=color),
-                    IconButton(icon='attach_money', icon_size=48, tooltip='Донат', url='https://www.donationalerts.com/r/inside_forever', icon_color=color),
+                Row([IconButton(icon='telegram', icon_size=48, tooltip='Канал', url='https://t.me/+i5AhxcIinEVkZjAy', icon_color=color),
                     IconButton(icon='info', icon_size=48, tooltip='Информация', icon_color=color, on_click=information)], alignment='CENTER'),
                 Row([IconButton(icon='color_lens_sharp', icon_size=48, tooltip='Цвет (рандом)', icon_color=color, on_click=color_change),
                     IconButton(icon='mode_night', icon_size=48, tooltip='Тема', on_click=theme_change, icon_color=color)], alignment='CENTER'))

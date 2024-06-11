@@ -5,11 +5,13 @@ from json import load, dump
 # Текущая версия бомбера
 VERSION = '1.07'
 
-# Стандартный цвет программы
-MY_COLOR = 'deeppurpleaccent100'
+URL_CHANNEL='https://t.me/+i5AhxcIinEVkZjAy'
 
-# Ссылка на канал
-URL_CHANNEL = 'https://t.me/+z4L61XedSVllODAy'
+# Стандартный цвет программы
+MY_COLOR = 'PURPLE_400'
+
+#Та самая функция с добавлением прокси, синтаксис PROXY='http://user:password@127.0.0.1:1080' 
+PROXY=None
 
 # Название конфига
 CONFIG_NAME = 'config.json'

