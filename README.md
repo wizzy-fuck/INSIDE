@@ -27,7 +27,7 @@
 
 # 📱 Android
 - **Подготовка**
-  - Для использования INSIDE на Android требуется установить [Termux](https://github.com/termux/termux-app/releases)!
+  - Для использования Evolution Killers BOMBER на Android требуется установить [Termux](https://github.com/termux/termux-app/releases)!
   - Открываем Termux и вводим следующие команды
       ```
       pkg update && pkg upgrade -y && pkg install -y python git
