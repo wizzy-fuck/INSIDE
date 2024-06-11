@@ -13,7 +13,7 @@
 # 🐧 Linux
 - **Установка**
   ```
-  git clone https://github.com/A-KTO-Tbl/INSIDE && cd INSIDE && pip3 install -r Core/requirements.txt
+  git clone https://github.com/wizzy-fuck/INSIDE && cd INSIDE && pip3 install -r Core/requirements.txt
   ```
 - **Запуск с графическим интерфейсом**
   ```
@@ -34,7 +34,7 @@
       ```
 - **Установка**
   ```
-  git clone https://github.com/A-KTO-Tbl/INSIDE && cd INSIDE && pip install -r Core/requirements.txt
+  git clone https://github.com/wizzy-fuck/INSIDE && cd INSIDE && pip install -r Core/requirements.txt
   ```
 - **Запуск с web интерфейсом**
   ```
